@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    ports:
+      - "3300:3300"
+      - "3301:3301"
+      - "3302:3302"
+    volumes:
+      - ".:/app/"
+      - "node_modules_volume:/app/node_modules"
+      - "yarn-cache:/usr/local/share/.cache/yarn/v6"
+    tty: true
+    stdin_open: true
+    environment:
+      - "DATABASE_PASSWORD=postgres"
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    tty: true
+    stdin_open: true
+    volumes:
+      - "data-base:/var/lib/postgres/data/"
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
+
+volumes:
+  yarn-cache:
+  node_modules_volume:
+  data-base:
