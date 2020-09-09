@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12-alpine
 
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:ja
@@ -11,11 +11,18 @@ COPY package*.json yarn.lock /app/
 
 RUN yarn install 
 
-RUN apt-get update && apt-get install -y \
-	tmux \
-	curl
+RUN apk update && apk add   \
+  tmux \
+  bash \
+  sudo \
+  zsh \
+  curl
 
 
+RUN apk --update add tzdata && \
+  cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+  apk del tzdata && \
+  rm -rf /var/cache/apk/*
 # RUN apk add 
 # 本番用にコードを作成している場合
 # RUN npm install --only=production
@@ -23,6 +30,6 @@ RUN apt-get update && apt-get install -y \
 # アプリケーションのソースをバンドルする
 COPY . .
 
-EXPOSE 3300
+EXPOSE 5500
 # CMD [ "ash"]
 

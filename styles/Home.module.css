@@ -121,3 +121,7 @@
     flex-direction: column;
   }
 }
+.drawio {
+  max-width: 100%;
+  border: 1px solid transparent;
+}
