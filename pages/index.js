@@ -1,56 +1,47 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import sass from "../styles/home.module.sass";
+import moment from 'moment'
+
+function Nowtime() {
+  return (
+
+    <p>
+      {moment().format('YYYY/MM/DD hh:mm:ss:SSS')}
+      asdddddddddddddddddddd
+    </p>
+
+  )
+}
+class Clocck extends React.Component {
+  render() {
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {moment().format('YYYY/MM/DD hh:mm:ss')}.</h2>
+    </div>
+
+  }
+}
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+
+
+        <link rel="manifest" href="/favicons/site.webmanifest" />
+        <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <title>HEY SEY JAPAN</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          HEY 
-{' '}
-<a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing
-{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <Nowtime />
       </main>
 
       <footer className={styles.footer}>
@@ -67,3 +58,5 @@ export default function Home() {
     </div>
   );
 }
+
+setInterval(Home, 10);
