@@ -1,6 +1,7 @@
 import Head from "next/head";
 import moment from "moment";
 import React from "react";
+import { Button, Container } from "react-bootstrap";
 import styles from "../styles/Home.module.css";
 // import sass from "../styles/home.module.sass";
 
@@ -14,7 +15,7 @@ function Nowtime() {
 }
 
 function asdfievbeosk() {
-  return moment().format("YYYY/MM/DD hh:mm:ss:SSS")
+  return moment().format("YYYY/MM/DD hh:mm:ss:SSS");
 }
 function Clocck() {
   return (
@@ -22,9 +23,7 @@ function Clocck() {
       <h1>Hello, world!</h1>
       <h2>
         Now time is
-        {
-          asdfievbeosk()
-        }
+        {asdfievbeosk()}
       </h2>
     </div>
   );
@@ -41,6 +40,43 @@ function Clocck() {
 
 setInterval(asdfievbeosk, 10);
 
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: this.nowtime() };
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 10);
+  }
+
+  nowtime() {
+    return moment().format("YYYY/MM/DD hh:mm:ss:S");
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: this.nowtime(),
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>
+          Now time is
+          {this.state.date}
+        </h2>
+      </div>
+    );
+  }
+}
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -50,7 +86,12 @@ export default function Home() {
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
         />
-
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossOrigin="anonymous"
+        />
         <link rel="manifest" href="/favicons/site.webmanifest" />
         <link
           rel="mask-icon"
@@ -64,10 +105,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <Container className={styles.main}>
         <Nowtime />
         <Clocck />
-      </main>
+        <Clock />
+        <Button variant="primary" size="lg" block>
+          ボタンだぞー
+        </Button>
+      </Container>
 
       <footer className={styles.footer}>
         <a
