@@ -3,7 +3,7 @@ import moment from "moment";
 import React from "react";
 import { Button, Container } from "react-bootstrap";
 import styles from "../styles/Home.module.css";
-// import sass from "../styles/home.module.sass";
+// import WmIQ65qoWWhcGKf from "../styles/Home.module.scss";
 
 function Nowtime() {
   return (
