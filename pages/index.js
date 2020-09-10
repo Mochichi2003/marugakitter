@@ -40,7 +40,7 @@ function Clocck() {
 
 setInterval(asdfievbeosk, 10);
 
-class NowtimeIS extends React.Component {
+class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = { date: this.nowtime() };
@@ -67,11 +67,11 @@ class NowtimeIS extends React.Component {
   render() {
     return (
       <div>
-        {/* <h1>Hello, world!</h1> */}
-        <p>
+        <h1>Hello, world!</h1>
+        <h2>
           Now time is
           {this.state.date}
-        </p>
+        </h2>
       </div>
     );
   }
@@ -108,6 +108,7 @@ export default function Home() {
       <Container className={styles.main}>
         <Nowtime />
         <Clocck />
+        <Clock />
         <Button variant="primary" size="lg" block>
           ボタンだぞー
         </Button>
@@ -119,8 +120,6 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <NowtimeIS />
-
           Powered by
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
