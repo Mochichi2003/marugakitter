@@ -6,14 +6,12 @@
     "dev": "next dev --port 3300",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .js .",
-    "lint:fix": "eslint --fix --ext .js  .",
+    "lint": "eslint --ext .js,.jsx,.scss .",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.scss  .",
     "export": "next export",
     "plint": "npx prettier --write ."
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.5.2",
     "jquery": "1.9.1",
     "moment": "^2.27.0",

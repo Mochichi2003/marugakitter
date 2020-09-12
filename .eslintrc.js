@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
     "plugin:react/recommended",
@@ -19,6 +20,6 @@ module.exports = {
   rules: {
     "prettier/prettier": ["error", { singleQuote: false, semi: true }],
 
-    // "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
   },
 };

@@ -1,8 +1,8 @@
 import Head from "next/head";
 import moment from "moment";
 import React from "react";
-import { Button, Container } from "react-bootstrap";
-// import styles from "../styles/Home.module.css";
+import { Button, Container, Form } from "react-bootstrap";
+
 // import WmIQ65qoWWhcGKf from "../styles/Home.module.scss";
 import Link from "next/link";
 import styles from "../styles/main.module.scss";

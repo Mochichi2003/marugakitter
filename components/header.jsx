@@ -2,15 +2,14 @@ import React from "react";
 import Head from "next/head";
 
 import Link from "next/link";
-import { Container, Navbar } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import styles from "./Header.module.scss";
+
 
 export default function TopHeader() {
   return (
     <div className={styles.topbar}>
-      <Head>
-
-      </Head>
+      <Head />
       {/* <Container>
         <Link href="/" className={styles.backtohome}>
           
@@ -18,12 +17,11 @@ export default function TopHeader() {
       </Container> */}
       <Navbar bg="dark" variant="dark">
         <Link href="/">
-          <Navbar.Brand >
-            <p className={styles.home}>Home</p>
-          {/* React Bootstrap */}
-        </Navbar.Brand>
+          <Navbar.Brand>
+            <p className={styles.home}>丸書きったー</p>
+            {/* React Bootstrap */}
+          </Navbar.Brand>
         </Link>
-
       </Navbar>
 
       {/* <main>{children}</main> */}
