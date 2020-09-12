@@ -14,7 +14,6 @@ You do not need to worry about .error {} colliding with any other `.css` or
   justify-content: center;
   align-items: center;
   padding: 0;
-  
 }
 
 .main {
@@ -100,7 +99,7 @@ You do not need to worry about .error {} colliding with any other `.css` or
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
-	transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .card:hover,
@@ -135,7 +134,7 @@ You do not need to worry about .error {} colliding with any other `.css` or
   max-width: 100%;
   border: 1px solid transparent;
 }
-.header{
+.header {
   width: 100%;
-  background:#f00
+  background: #f00;
 }
