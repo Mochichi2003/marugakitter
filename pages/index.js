@@ -2,8 +2,12 @@ import Head from "next/head";
 import moment from "moment";
 import React from "react";
 import { Button, Container } from "react-bootstrap";
-import styles from "../styles/Home.module.css";
+// import styles from "../styles/Home.module.css";
 // import WmIQ65qoWWhcGKf from "../styles/Home.module.scss";
+import styles from "../styles/main.module.scss";
+
+// 自分で作ったcomponentを入れていくところ
+import TopHeader from "../components/header";
 
 function Nowtime() {
   return (
@@ -51,7 +55,7 @@ class Clock extends React.Component {
   }
 
   nowtime() {
-    return moment().format("YYYY/MM/DD hh:mm:ss:S");
+    return moment().format("YYYY/MM/DD hh:mm:ss");
   }
 
   componentWillUnmount() {
@@ -67,7 +71,7 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
+        <h1 className={styles.error}>Hello, world!</h1>
         <h2>
           Now time is
           {this.state.date}
@@ -101,11 +105,13 @@ export default function Home() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        <title>HEY SEY JAPAN</title>
+        <title>丸書きったー</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <TopHeader />
 
       <Container className={styles.main}>
+        <topbar />
         <Nowtime />
         <Clocck />
         <Clock />
