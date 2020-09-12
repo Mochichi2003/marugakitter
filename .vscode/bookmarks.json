@@ -8,5 +8,15 @@
 				"label": ""
 			}
 		]
+	},
+	{
+		"path": "$ROOTPATH$/pages/index.jsx",
+		"bookmarks": [
+			{
+				"line": 55,
+				"column": 20,
+				"label": ""
+			}
+		]
 	}
 ]

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Navbar } from "react-bootstrap";
 import styles from "./Header.module.scss";
 
-
 export default function TopHeader() {
   return (
     <div className={styles.topbar}>

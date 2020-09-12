@@ -5,83 +5,55 @@ import { Button, Container, Form } from "react-bootstrap";
 
 // import WmIQ65qoWWhcGKf from "../styles/Home.module.scss";
 import Link from "next/link";
-import styles from "../styles/main.module.scss";
+import styles from "../styles/main.module.sass";
 // 自分で作ったcomponentを入れていくところ
 import TopHeader from "../components/header";
-
-function Nowtime() {
-  return (
-    <div>
-      <p>
-        {moment().format("YYYY/MM/DD hh:mm:ss:SSS")}
-        asdddddddddddddddddddd
-      </p>
-    </div>
-  );
-}
+import Converter from "../components/get_content_and_convert/conver";
 
 function asdfievbeosk() {
   return moment().format("YYYY/MM/DD hh:mm:ss:SSS");
 }
-function Clocck() {
-  return (
-    <div>
-      <h1>Hello, world!</h1>
-      <h2>
-        Now time is
-        {asdfievbeosk()}
-      </h2>
-    </div>
-  );
-  // render() {
-  //   <div>
-  //     <h1>Hello, world!</h1>
-  //     <h2>
-  //       It is
-  //       {moment().format("YYYY/MM/DD hh:mm:ss")}
-  //     </h2>
-  //   </div>;
-  // }
-}
+class Iputform extends React.Component {
+  FormInputValue() {
+    setInterval(() => {
+      console.log(`${this.state.name}あああああああああああああああ`);
+    }, 424);
+  }
 
-setInterval(asdfievbeosk, 10);
-
-class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: this.nowtime() };
+    this.state = {
+      name: "入力するところでええええええええええすうううううううううううう",
+    };
   }
 
-  componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 10);
-  }
-
-  nowtime() {
-    return moment().format("YYYY/MM/DD hh:mm:ss");
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  tick() {
-    this.setState({
-      date: this.nowtime(),
-    });
+  handleNameChange(name) {
+    this.setState({ name });
   }
 
   render() {
+    let textareaVlue;
     return (
-      <div>
-        <h1 className={styles.error}>Hello, world!</h1>
-        <h2>
-          Now time is
-          {this.state.date}
-        </h2>
-      </div>
+      <>
+        <Form className={styles.form}>
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Label>入力するところ</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="5"
+              value={this.state.name}
+              onChange={(e) => this.handleNameChange(e.target.value)}
+            />
+            <p className={styles.white_space}>{this.state.name}</p>
+            <Converter className={styles.white_space} value={this.state.name} />
+          </Form.Group>
+        </Form>
+      </>
     );
   }
 }
+
+setInterval(asdfievbeosk, 10);
 
 export default function Home() {
   return (
@@ -92,12 +64,7 @@ export default function Home() {
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
         />
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-          crossOrigin="anonymous"
-        />
+
         <link rel="manifest" href="/favicons/site.webmanifest" />
         <link
           rel="mask-icon"
@@ -114,10 +81,7 @@ export default function Home() {
       {/* <TopHeader /> */}
 
       <Container className={styles.main}>
-        {/* <topbar /> */}
-        <Nowtime />
-        <Clocck />
-        <Clock />
+        <Iputform />
 
         <Link href="/post">
           <Button variant="primary" size="lg" block>
