@@ -22,16 +22,13 @@ $icon-color: #000000;
   right: 0;
   position: fixed;
 }
-.backtohome {
-  color: red;
-  background: red;
-}
 
 .home {
   font-size: 32px;
   padding: 0;
   margin: 0;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .backtohomeicon {

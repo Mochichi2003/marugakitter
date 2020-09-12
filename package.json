@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint --ext .js .",
     "lint:fix": "eslint --fix --ext .js  .",
+    "export": "next export",
     "plint": "npx prettier --write ."
   },
   "dependencies": {

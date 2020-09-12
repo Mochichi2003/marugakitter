@@ -4,17 +4,19 @@ import React from "react";
 import { Button, Container } from "react-bootstrap";
 // import styles from "../styles/Home.module.css";
 // import WmIQ65qoWWhcGKf from "../styles/Home.module.scss";
+import Link from "next/link";
 import styles from "../styles/main.module.scss";
-
 // 自分で作ったcomponentを入れていくところ
 import TopHeader from "../components/header";
 
 function Nowtime() {
   return (
-    <p>
-      {moment().format("YYYY/MM/DD hh:mm:ss:SSS")}
-      asdddddddddddddddddddd
-    </p>
+    <div>
+      <p>
+        {moment().format("YYYY/MM/DD hh:mm:ss:SSS")}
+        asdddddddddddddddddddd
+      </p>
+    </div>
   );
 }
 
@@ -112,13 +114,16 @@ export default function Home() {
       {/* <TopHeader /> */}
 
       <Container className={styles.main}>
-        <topbar />
+        {/* <topbar /> */}
         <Nowtime />
         <Clocck />
         <Clock />
-        <Button variant="primary" size="lg" block>
-          ボタンだぞー
-        </Button>
+
+        <Link href="/post">
+          <Button variant="primary" size="lg" block>
+            /postに行くところ
+          </Button>
+        </Link>
       </Container>
 
       <footer className={styles.footer}>
@@ -135,4 +140,4 @@ export default function Home() {
   );
 }
 
-setInterval(Home, 10);
+// setInterval(Home, 10);

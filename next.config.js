@@ -17,3 +17,12 @@
 //     return config;
 //   }
 // };
+module.exports = {
+  exportPathMap() {
+    return {
+      "/": {
+        page: "/",
+      },
+    };
+  },
+};
