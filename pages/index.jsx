@@ -23,7 +23,7 @@ class Iputform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "入力するところでええええええええええすうううううううううううう",
+      name: "入力するところでえええ",
     };
   }
 
@@ -85,7 +85,7 @@ export default function Home() {
 
         <Link href="/post">
           <Button variant="primary" size="lg" block>
-            /postに行くところ
+            ツイートする
           </Button>
         </Link>
       </Container>

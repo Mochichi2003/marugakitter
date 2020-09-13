@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./conver.module.sass";
 
 function textCov(value) {
-  let convertvalues = null;
+  let convertvalues = " ";
   convertvalues = value.split("");
   let retunValue;
   for (const key in convertvalues) {
@@ -13,5 +14,5 @@ function textCov(value) {
 }
 
 export default function Converter(props) {
-  return <>{textCov(props.value)}</>;
+  return <p className={styles.texttoindention}>{textCov(props.value)}</p>;
 }
