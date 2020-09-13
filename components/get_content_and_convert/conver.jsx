@@ -5,14 +5,19 @@ import styles from "./conver.module.sass";
 
 function textCov(value) {
   let convertvalues = " ";
-  convertvalues = value.split("");
+  convertvalues = value.split("\n");
   let retunValue = "🤔";
-  for (const key in convertvalues) {
-    retunValue = `${retunValue + convertvalues[key]}\n`;
+  for (let index = 0; index < convertvalues.length; index++) {
+    const element = convertvalues[index];
+    for (const value of convertvalues[index]) {
+      console.log("value  = " + value);
+      // console.log("convertvalues  = " +convertvalues);
+    }
   }
+
   // console.log(retunValue);
 
-  return `${retunValue.slice(2)}`;
+  return `${convertvalues}`;
 }
 
 export default function Converter(props) {
@@ -43,13 +48,20 @@ export default function Converter(props) {
             {textCov(props.value)}
           </Card.Text>
           <a
+            className={styles.ButtonLink}
+            style={{ "text-decoration": "none" }}
             href={`${
               "https://twitter.com/intent/tweet?" + "hashtags="
             }${encodeURIComponent("縦書きなのだ")}&text=${encodeURIComponent(
               `${textCov(props.value)}\nhttps://twitter.com/home`
             )}`}
           >
-            <Button variant="primary" size="lg" block>
+            <Button
+              variant="primary"
+              size="lg"
+              block
+              className={styles.ButtonLink}
+            >
               ツイートする
             </Button>
             {/* {`${props.value}をツイートする`} */}
@@ -65,4 +77,3 @@ export default function Converter(props) {
     </>
   );
 }
-// https://twitter.com/intent/tweet?hashtags=%E3%82%8F%E3%81%82%E3%81%82%E3%81%82%E3%81%82%E3%81%84%E3%81%84%E3%81%84%E3%81%84%E3%81%84%2C&original_referer=http%3A%2F%2Flocalhost%3A3300%2F&ref_src=twsrc%5Etfw&related=Mochi_749&text=%E3%81%9F%0A%E3%81%A6%0A%E3%81%8C%0A%E3%81%8D%0A%E3%81%A0%0A%E3%82%88%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A%E3%83%BC%0A&tw_p=tweetbutton
