@@ -6,15 +6,22 @@ import styles from "./conver.module.sass";
 function textCov(value) {
   let convertvalues = " ";
   convertvalues = value.split("\n");
+  console.log(convertvalues);
   let retunValue = "🤔";
+
+  let retunValueText;
   for (let index = 0; index < convertvalues.length; index++) {
     const element = convertvalues[index];
+
     for (const value of convertvalues[index]) {
-      console.log("value  = " + value);
+      console.log(`value  = ${value} Line = ${index}`);
+
+      retunValueText += `${value }Line = ${index}\n`;
+
       // console.log("convertvalues  = " +convertvalues);
     }
   }
-
+  console.log(`${retunValueText}あか`);
   // console.log(retunValue);
 
   return `${convertvalues}`;
