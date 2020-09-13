@@ -37,7 +37,7 @@ class Iputform extends React.Component {
       <>
         <Form className={styles.form}>
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>入力するところ</Form.Label>
+            <Form.Label>もとのテキストを入れてね</Form.Label>
             <Form.Control
               as="textarea"
               rows="5"
@@ -82,12 +82,6 @@ export default function Home() {
 
       <Container className={styles.main}>
         <Iputform />
-
-        <Link href="/post">
-          <Button variant="primary" size="lg" block>
-            ツイートする
-          </Button>
-        </Link>
       </Container>
 
       <footer className={styles.footer}>

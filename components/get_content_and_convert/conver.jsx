@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import Head from "next/head";
 import styles from "./conver.module.sass";
 
@@ -28,9 +28,10 @@ export default function Converter(props) {
       </Head>
       <Card
         // bg={variant.toLowerCase()}
+        bg="light"
         // key={idx}
         // // text={variant.toLowerCase() === "light" ? "dark" : "white"}
-        style={{ width: "18rem" }}
+        style={{ "max-width": "40rem", margin: "0 auto" }}
         className="mb-2"
       >
         <Card.Header>ツイート内容</Card.Header>
@@ -41,18 +42,21 @@ export default function Converter(props) {
           >
             {textCov(props.value)}
           </Card.Text>
+          <a
+            href={`${
+              "https://twitter.com/intent/tweet?" + "hashtags="
+            }${encodeURIComponent("縦書きなのだ")}&text=${encodeURIComponent(
+              `${textCov(props.value)}\nhttps://twitter.com/home`
+            )}`}
+          >
+            <Button variant="primary" size="lg" block>
+              ツイートする
+            </Button>
+            {/* {`${props.value}をツイートする`} */}
+          </a>
         </Card.Body>
       </Card>
 
-      <a
-        href={`${
-          "https://twitter.com/intent/tweet?" + "hashtags="
-        }${encodeURIComponent("縦書きなのだ")}&original_referer=${
-          location.href
-        }&text=${encodeURIComponent(textCov(props.value))}`}
-      >
-        {`${props.value}をツイートする`}
-      </a>
       {/* <script
         async
         src="https://platform.twitter.com/widgets.js"

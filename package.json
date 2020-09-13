@@ -6,8 +6,8 @@
     "dev": "next dev --port 3300",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .js,.jsx,.scss,.sass .",
-    "lint:fix": "eslint --fix --ext .js,.jsx,.scss,.sass  .",
+    "lint:": "eslint --ext .js,.jsx,.scss,.sass .",
+    "lint": "eslint --fix --ext .js,.jsx,.scss,.sass  .",
     "export": "next export",
     "plint": "npx prettier --write ."
   },
