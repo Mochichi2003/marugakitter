@@ -23,7 +23,7 @@ class Iputform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "入力するところでえええ",
+      name: "たてがきだよーーーーーーー\nーーーーーーーー",
     };
   }
 
