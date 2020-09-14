@@ -85,7 +85,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://raw.githubusercontent.com/Mochichi2003/marugakitter/master/public/palettelist%20(1)-02.png"
+          content="https://marugakitter.vercel.app/palettelist%20(1)-02.png"
         />
 
         <title>縦書きったー</title>
