@@ -1,13 +1,16 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import Head from "next/head";
+import { locale } from "moment";
+import { useRouter } from "next/router";
 import styles from "./conver.module.sass";
 
 // 全角　　　　　　　　　　　　　　　全角
 function textCov(value) {
   let convertvalues = " ";
+  let retunValue = " ";
   convertvalues = value.split("\n");
-  console.log(convertvalues);
+  // console.log(convertvalues);
 
   // 一番文字数が多いものを代入する
   let MoustlongTextCont = 0;
@@ -16,54 +19,41 @@ function textCov(value) {
       MoustlongTextCont = convertvalues[index].length;
     }
   }
-  let retunValue = " ";
-  // 一番文字数が多いものを出力する
-  console.log(MoustlongTextCont);
-  for (let line = 0; line < convertvalues.length; line++) {
-    // 文字数の選択のループ
-    // retunValue += convertvalues[convertvalues.length - line - 1];
+  convertvalues = convertvalues.reverse();
 
-    console.log(
-      `convertvalues[convertvalues.length - line  - 1 ] === ${
-        convertvalues[convertvalues.length - line - 1]
-      }`
-    );
+  for (let i = 0; i < MoustlongTextCont; i++) {
+    // console.log(`substr  = ${convertvalues[0].substr(i, 1)}`);
 
-    for (let i = 0; i < MoustlongTextCont; i++) {
-      retunValue += convertvalues[convertvalues.length - line - 1]
-        .toString()
-        .substr(i, 1);
-      console.log(
-        convertvalues[convertvalues.length - line - 1].toString().substr(i, 1)
-      );
-      convertvalues[convertvalues.length - line - 1];
+    for (let index = 0; index < convertvalues.length; index++) {
+      // console.log(index);
+      // console.log(
+      //   `わあああああああ   =  ${
+      //     convertvalues[index].substr(i, 1) ||
+      //     "びゃあああああああああああああああああ"
+      //   }`
+      // );
+      retunValue += convertvalues[index].substr(i, 1) || "　";
+      // for (let index = 0; index < array.length; index++) {
+      //   const element = array[index];
 
-      // 行の選択のループ
-      // console.log(`i = ${i} line = ${line}`);
-      // retunValue +=
+      // }
     }
     retunValue += "\n";
   }
-  console.log(`retunValue = ${retunValue}`);
 
-  // substr を使って切り出す
-
-  let retunValueText;
   for (let index = 0; index < convertvalues.length; index++) {
-    const element = convertvalues[index];
+    // console.log(index);
+    // console.log(convertvalues[index]);
+    // for (let index = 0; index < array.length; index++) {
+    //   const element = array[index];
 
-    for (const value of convertvalues[index]) {
-      console.log(`value  = ${value} Line = ${index}`);
-
-      retunValueText += `${value}Line = ${index}\n`;
-
-      // console.log("convertvalues  = " +convertvalues);
-    }
+    // }
   }
-  // console.log(`${retunValueText}あか`);
-  // console.log(retunValue);
 
-  return `${convertvalues}`;
+  // 一番文字数が多いものを出力する
+  // console.log(`retunValue = ${retunValue}`);
+  retunValue = retunValue.slice(1);
+  return `${retunValue}`;
 }
 
 export default function Converter(props) {
@@ -98,8 +88,8 @@ export default function Converter(props) {
             style={{ "text-decoration": "none" }}
             href={`${
               "https://twitter.com/intent/tweet?" + "hashtags="
-            }${encodeURIComponent("縦書きなのだ")}&text=${encodeURIComponent(
-              `${textCov(props.value)}\nhttps://twitter.com/home`
+            }${encodeURIComponent("test")}&text=${encodeURIComponent(
+              `${textCov(props.value)}\n`
             )}`}
           >
             <Button
@@ -122,4 +112,66 @@ export default function Converter(props) {
       /> */}
     </>
   );
+}
+
+function アーカイブ(value) {
+  let convertvalues = " ";
+  convertvalues = value.split("\n");
+  // console.log(convertvalues);
+
+  // 一番文字数が多いものを代入する
+  let MoustlongTextCont = 0;
+  for (let index = 0; index < convertvalues.length; index++) {
+    if (MoustlongTextCont < convertvalues[index].length) {
+      MoustlongTextCont = convertvalues[index].length;
+    }
+  }
+  let retunValue = " ";
+  // 一番文字数が多いものを出力する
+  // console.log(MoustlongTextCont);
+  for (let line = 0; line < convertvalues.length; line++) {
+    // 文字数の選択のループ
+    // retunValue += convertvalues[convertvalues.length - line - 1];
+
+    // console.log(
+    //   `convertvalues[convertvalues.length - line  - 1 ] === ${
+    //     convertvalues[convertvalues.length - line - 1]
+    //   }`
+    // );
+
+    for (let i = 0; i < MoustlongTextCont; i++) {
+      retunValue += convertvalues[convertvalues.length - line - 1]
+        .toString()
+        .substr(i, 1);
+      // console.log(
+      //   convertvalues[convertvalues.length - line - 1].toString().substr(i, 1)
+      // );
+      convertvalues[convertvalues.length - line - 1];
+
+      // 行の選択のループ
+      // console.log(`i = ${i} line = ${line}`);
+      // retunValue +=
+    }
+    retunValue += "\n";
+  }
+  // console.log(`retunValue = ${retunValue}`);
+
+  // substr を使って切り出す
+
+  let retunValueText;
+  for (let index = 0; index < convertvalues.length; index++) {
+    const element = convertvalues[index];
+
+    for (const value of convertvalues[index]) {
+      console.log(`value  = ${value} Line = ${index}`);
+
+      retunValueText += `${value}Line = ${index}\n`;
+
+      // console.log("convertvalues  = " +convertvalues);
+    }
+  }
+  // console.log(`${retunValueText}あか`);
+  // console.log(retunValue);
+
+  return `${convertvalues}`;
 }
