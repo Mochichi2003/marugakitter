@@ -23,7 +23,7 @@ class Iputform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "123\n456\n7890",
+      name: "123\n4560\n789",
     };
   }
 
@@ -86,12 +86,11 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://twitter.com/Mochi_749"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Powered by Mochi
         </a>
       </footer>
     </div>
