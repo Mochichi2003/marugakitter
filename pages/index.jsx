@@ -85,7 +85,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg"
+          content="https://raw.githubusercontent.com/Mochichi2003/marugakitter/master/public/palettelist%20(1)-02.png"
         />
 
         <title>縦書きったー</title>
