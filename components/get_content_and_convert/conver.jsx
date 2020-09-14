@@ -46,7 +46,6 @@ function textCov(value) {
     // console.log(convertvalues[index]);
     // for (let index = 0; index < array.length; index++) {
     //   const element = array[index];
-
     // }
   }
 
@@ -89,7 +88,7 @@ export default function Converter(props) {
             href={`${
               "https://twitter.com/intent/tweet?" + "hashtags="
             }${encodeURIComponent("test")}&text=${encodeURIComponent(
-              `${textCov(props.value) +"https://marugakitter.vercel.app/"}\n`
+              `${`${textCov(props.value)}https://marugakitter.vercel.app/`}\n`
             )}`}
           >
             <Button
@@ -113,4 +112,3 @@ export default function Converter(props) {
     </>
   );
 }
-

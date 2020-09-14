@@ -45,7 +45,7 @@ class Iputform extends React.Component {
               onChange={(e) => this.handleNameChange(e.target.value)}
             />
             {/* <p className={styles.white_space}>{this.state.name}</p> */}
-            <Converter  className={styles.white_space} value={this.state.name} />
+            <Converter className={styles.white_space} value={this.state.name} />
           </Form.Group>
         </Form>
       </>
@@ -73,6 +73,20 @@ export default function Home() {
         />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@Mochi_749" />
+        <meta name="twitter:creator" content="@Mochi_749" />
+        <meta property="og:url" content="https://marugakitter.vercel.app/" />
+        <meta property="og:title" content="縦書きったー" />
+        <meta
+          property="og:description"
+          content="入力した文字を縦書きに変換してTweetできるアプリです"
+        />
+        <meta
+          property="og:image"
+          content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg"
+        />
 
         <title>縦書きったー</title>
         <link rel="icon" href="/favicon.ico" />
