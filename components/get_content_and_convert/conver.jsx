@@ -87,7 +87,7 @@ export default function Converter(props) {
             style={{ "text-decoration": "none" }}
             href={`${
               "https://twitter.com/intent/tweet?" + "hashtags="
-            }${encodeURIComponent("test")}&text=${encodeURIComponent(
+            }${encodeURIComponent("")}&text=${encodeURIComponent(
               `${`${textCov(props.value)}https://marugakitter.vercel.app/`}\n`
             )}`}
           >
