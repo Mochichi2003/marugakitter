@@ -23,7 +23,7 @@ class Iputform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "菊の香や\nならには古き\n仏達",
+      name: "",
     };
   }
 
@@ -37,15 +37,15 @@ class Iputform extends React.Component {
       <>
         <Form className={styles.form}>
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>もとのテキストを入れてね</Form.Label>
+            <Form.Label>変換したいテキストを入れてください</Form.Label>
             <Form.Control
               as="textarea"
               rows="5"
               value={this.state.name}
               onChange={(e) => this.handleNameChange(e.target.value)}
             />
-            <p className={styles.white_space}>{this.state.name}</p>
-            <Converter className={styles.white_space} value={this.state.name} />
+            {/* <p className={styles.white_space}>{this.state.name}</p> */}
+            <Converter  className={styles.white_space} value={this.state.name} />
           </Form.Group>
         </Form>
       </>
@@ -74,7 +74,7 @@ export default function Home() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        <title>丸書きったー</title>
+        <title>縦書きったー</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopHeader />
