@@ -82,9 +82,7 @@ export default function Converter(props) {
             className={`${styles.texttoindention} ${styles.card_text}`}
           >
             {/* <Form.Control as="textarea" rows="5" value={textCov(props.value)}/> */}
-            <div className={styles.resultView} >
-              {textCov(props.value)}
-            </div>
+            <div className={styles.resultView}>{textCov(props.value)}</div>
           </Card.Text>
           <a
             className={styles.ButtonLink}
