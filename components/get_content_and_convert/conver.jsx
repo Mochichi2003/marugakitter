@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button,Form } from "react-bootstrap";
 import Head from "next/head";
 import { locale } from "moment";
 import { useRouter } from "next/router";
@@ -81,7 +81,11 @@ export default function Converter(props) {
           <Card.Text
             className={`${styles.texttoindention} ${styles.card_text}`}
           >
+            {/* <Form.Control as="textarea" rows="5" value={textCov(props.value)}/> */}
+            <div className={styles.resultView} contenteditable="true">
+
             {textCov(props.value)}
+            </div>
           </Card.Text>
           <a
             className={styles.ButtonLink}
