@@ -17,7 +17,7 @@ export default function TopHeader() {
       <Navbar bg="dark" variant="dark">
         <Link href="/">
           <Navbar.Brand>
-            <p className={styles.home}>縦書きったー</p>
+            <p className={styles.home}>縦書きくん</p>
             {/* React Bootstrap */}
           </Navbar.Brand>
         </Link>

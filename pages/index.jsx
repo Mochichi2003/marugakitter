@@ -80,7 +80,7 @@ export default function Home() {
         <meta name="twitter:site" content="@Mochi_749" />
         <meta name="twitter:creator" content="@Mochi_749" />
         <meta property="og:url" content="https://marugakitter.vercel.app/" />
-        <meta property="og:title" content="縦書きったー" />
+        <meta property="og:title" content="縦書きくん" />
         <meta
           property="og:description"
           content="入力した文字を縦書きに変換してTweetできるアプリです"
@@ -90,7 +90,7 @@ export default function Home() {
           content="https://marugakitter.vercel.app/favicons/縦書きったーアイコン.png"
         />
 
-        <title>縦書きったー</title>
+        <title>縦書きくん</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopHeader />
