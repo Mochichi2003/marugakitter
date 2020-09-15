@@ -35,9 +35,11 @@ class Iputform extends React.Component {
     let textareaVlue;
     return (
       <>
-        <Form className={styles.form}>
+        <Form className={(styles.form, "p-1")}>
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>変換したいテキストを入れてください</Form.Label>
+            <Form.Label>
+              変換したいテキストを入れてくださいaaaaaaaaaaaaaa
+            </Form.Label>
             <Form.Control
               as="textarea"
               rows="5"

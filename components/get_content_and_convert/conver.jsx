@@ -87,7 +87,7 @@ export default function Converter(props) {
             style={{ "text-decoration": "none" }}
             href={`${
               "https://twitter.com/intent/tweet?" + "hashtags="
-            }${encodeURIComponent("")}&text=${encodeURIComponent(
+            }${encodeURIComponent("縦書きったー")}&text=${encodeURIComponent(
               `${`${textCov(props.value)}https://marugakitter.vercel.app/`}\n`
             )}`}
           >
@@ -106,7 +106,7 @@ export default function Converter(props) {
 
       {/* <script
         async
-        src="https://platform.twitter.com/widgets.js"
+        src="https://platform.twitter.com/widgets.js"｜
         charset="utf-8"
       /> */}
     </>
