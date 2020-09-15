@@ -38,7 +38,7 @@ class Iputform extends React.Component {
         <Form className={(styles.form, "p-1")}>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>
-              変換したいテキストを入れてくださいaaaaaaaaaaaaaa
+              もとの内容を入力してください。
             </Form.Label>
             <Form.Control
               as="textarea"
