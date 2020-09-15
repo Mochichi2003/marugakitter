@@ -75,7 +75,7 @@ export default function Converter(props) {
         style={{ "max-width": "40rem", margin: "20px auto" }}
         className="mb-2"
       >
-        <Card.Header>ツイート内容</Card.Header>
+        <Card.Header>ここに変換されたのが出てくるよ</Card.Header>
         <Card.Body>
           {/* <Card.Title>ツイート内容</Card.Title> */}
           <Card.Text
