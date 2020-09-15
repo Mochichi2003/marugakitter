@@ -9,6 +9,7 @@ import styles from "./conver.module.sass";
 function textCov(value) {
   let convertvalues = " ";
   let retunValue = " ";
+  value =value.replace(/ー/g, '｜')
   convertvalues = value.split("\n");
   // console.log(convertvalues);
 

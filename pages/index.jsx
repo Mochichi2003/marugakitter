@@ -23,12 +23,14 @@ class Iputform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      name: "あああああああああーーーーーーーーーー\nーーーーー",
     };
   }
 
   handleNameChange(name) {
-    this.setState({ name });
+    this.setState({
+      name
+    });
   }
 
   render() {
@@ -37,9 +39,7 @@ class Iputform extends React.Component {
       <>
         <Form className={(styles.form, "p-1")}>
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>
-              もとの内容を入力してください。
-            </Form.Label>
+            <Form.Label>もとの内容を入力してください。</Form.Label>
             <Form.Control
               as="textarea"
               rows="5"
