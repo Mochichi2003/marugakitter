@@ -87,7 +87,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://marugakitter.vercel.app/favicons/縦書きったーアイコン-02.png"
+          content="https://marugakitter.vercel.app/favicons/縦書きったーアイコン.png"
         />
 
         <title>縦書きったー</title>
