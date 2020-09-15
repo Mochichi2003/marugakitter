@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button,Form } from "react-bootstrap";
+import { Card, Button, Form } from "react-bootstrap";
 import Head from "next/head";
 import { locale } from "moment";
 import { useRouter } from "next/router";
@@ -9,7 +9,7 @@ import styles from "./conver.module.sass";
 function textCov(value) {
   let convertvalues = " ";
   let retunValue = " ";
-  value =value.replace(/ー/g, '｜')
+  value = value.replace(/ー/g, "｜");
   convertvalues = value.split("\n");
   // console.log(convertvalues);
 
@@ -82,9 +82,8 @@ export default function Converter(props) {
             className={`${styles.texttoindention} ${styles.card_text}`}
           >
             {/* <Form.Control as="textarea" rows="5" value={textCov(props.value)}/> */}
-            <div className={styles.resultView} contenteditable="true">
-
-            {textCov(props.value)}
+            <div className={styles.resultView} >
+              {textCov(props.value)}
             </div>
           </Card.Text>
           <a

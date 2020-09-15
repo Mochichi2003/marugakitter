@@ -29,7 +29,7 @@ class Iputform extends React.Component {
 
   handleNameChange(name) {
     this.setState({
-      name
+      name,
     });
   }
 
@@ -41,7 +41,7 @@ class Iputform extends React.Component {
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>ここに入力すると</Form.Label>
             <Form.Control
-            placeholder="ここに入力すると"
+              placeholder="ここに入力すると"
               as="textarea"
               rows="5"
               value={this.state.name}
