@@ -5,6 +5,10 @@ import { locale } from "moment";
 import { useRouter } from "next/router";
 import styles from "./conver.module.sass";
 
+import Debug from "debug";
+const debug = Debug("mainapp:convert");
+
+
 // 全角　　　　　　　　　　　　　　　全角
 function textCov(value) {
   let convertvalues = " ";
@@ -43,7 +47,7 @@ function textCov(value) {
   }
 
   for (let index = 0; index < convertvalues.length; index++) {
-    // console.log(index);
+    // console.log(index);  
     // console.log(convertvalues[index]);
     // for (let index = 0; index < array.length; index++) {
     //   const element = array[index];
@@ -51,7 +55,7 @@ function textCov(value) {
   }
 
   // 一番文字数が多いものを出力する
-  // console.log(`retunValue = ${retunValue}`);
+  debug(retunValue + "アカサタナ");
   retunValue = retunValue.slice(1);
   return `${retunValue}`;
 }
@@ -64,7 +68,7 @@ export default function Converter(props) {
         <script
           async
           src="https://platform.twitter.com/widgets.js"
-          charset="utf-8"
+          charSet="utf-8"
         />
       </Head>
       <Card
@@ -72,7 +76,7 @@ export default function Converter(props) {
         bg="light"
         // key={idx}
         // // text={variant.toLowerCase() === "light" ? "dark" : "white"}
-        style={{ "max-width": "40rem", margin: "20px auto" }}
+        style={{ "maxWidth": "40rem", margin: "20px auto" }}
         className="mb-2"
       >
         <Card.Header>ここに変換されたのが出てくるよ</Card.Header>
@@ -86,7 +90,7 @@ export default function Converter(props) {
           </Card.Text>
           <a
             className={styles.ButtonLink}
-            style={{ "text-decoration": "none" }}
+            style={{ "textDecoration": "none" }}
             href={`${
               "https://twitter.com/intent/tweet?" + "hashtags="
             }${encodeURIComponent("縦書きくん")}&text=${encodeURIComponent(
@@ -109,7 +113,7 @@ export default function Converter(props) {
       {/* <script
         async
         src="https://platform.twitter.com/widgets.js"｜
-        charset="utf-8"
+        charSet="utf-8"
       /> */}
     </>
   );

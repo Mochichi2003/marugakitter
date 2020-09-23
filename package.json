@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3300",
+    "dev": "DEBUG=mainapp:* next dev --port 3300",
     "build": "next build",
     "start": "next start",
     "lint:": "eslint --ext .js,.jsx,.scss,.sass .",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
+    "debug": "^4.2.0",
     "jquery": "1.9.1",
     "moment": "^2.27.0",
     "next": "^9.5.3",
